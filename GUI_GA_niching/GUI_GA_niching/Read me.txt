@@ -1,0 +1,2 @@
+1. Run the niching platform.m 
+2. Change parameters and see the effects

@@ -1,0 +1,34 @@
+1. Find existing code or make your own implementation of the GA
+
+2. Try on benchmark functions M1 and M4 (see advanced EC lecture slides), also defined in Section 7 of the paper (see link below):
+
+     Mahfoud - M1 - M2 - M5 - etc-A Comparison of Parallel and Sequential Niching Methods.pdf
+
+3. Repeat this time, trying to maintain diversity, i.e.
+
+Modify GA using at least 2 different niching methods
+
+4. Plot fitness statistics Fmax, Favg, and Fmin versus generation #
+
+5. Vary crossover and mutation rates: Pm,Pc 
+
+6. Repeat experiments 10 times and report averages
+
+7. Plot initial + final population over the landscape of the function (as shown in lecture slides) for the best experiment with each method.
+
+8. Report should be well structured like a paper with Intro of Problem Statement, Overview and Pseudocde of Algorithms, Experimental Protocol and Analysis of Results and Conclusions, etc (for sample formats: see attached paper as well as the paper:
+
+
+
+Comparison of Multi-Modal Optimization Algorithms Based on Evolutionary Algorithms
+
+
+
+See Sample Report here: https://drive.google.com/open?id=1-rg8_7IDU4H-D8JLUwXqory5S9vXNLGZ
+
+
+IMPLEMENTATION OPTIONS:
+
+If you prefer to use matlab, here is source code for most of the mini-project:
+
+https://drive.google.com/file/d/0B12rFOQiJcsbQ1gzQWRBUWlZcnF0M3ZzN3lwOTlORkNRaldJ/view?usp=sharing
