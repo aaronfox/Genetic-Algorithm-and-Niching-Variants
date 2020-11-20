@@ -6,15 +6,13 @@ import math
 # By Luiz Rosa
 
 
-def generate_population(size, x_boundaries, y_boundaries):
+def generate_population(size, x_boundaries):#, y_boundaries):
     lower_x_boundary, upper_x_boundary = x_boundaries
-    lower_y_boundary, upper_y_boundary = y_boundaries
 
     population = []
     for i in range(size):
         individual = {
             "x": random.uniform(lower_x_boundary, upper_x_boundary),
-            "y": random.uniform(lower_y_boundary, upper_y_boundary),
         }
         population.append(individual)
 
@@ -23,8 +21,8 @@ def generate_population(size, x_boundaries, y_boundaries):
 
 def apply_function(individual):
     x = individual["x"]
-    y = individual["y"]
-    return math.sin(math.sqrt(x ** 2 + y ** 2))
+    m1 = math.sin(5*math.pi*x) ** 6
+    return m1
 
 
 def choice_by_roulette(sorted_population, fitness_sum):
@@ -54,26 +52,21 @@ def sort_population_by_fitness(population):
 
 def crossover(individual_a, individual_b):
     xa = individual_a["x"]
-    ya = individual_a["y"]
 
     xb = individual_b["x"]
-    yb = individual_b["y"]
 
-    return {"x": (xa + xb) / 2, "y": (ya + yb) / 2}
+    return {"x": (xa + xb) / 2}
 
 
 def mutate(individual):
     next_x = individual["x"] + random.uniform(-0.05, 0.05)
-    next_y = individual["y"] + random.uniform(-0.05, 0.05)
 
     lower_boundary, upper_boundary = (-4, 4)
 
     # Guarantee we keep inside boundaries
     next_x = min(max(next_x, lower_boundary), upper_boundary)
-    next_y = min(max(next_y, lower_boundary), upper_boundary)
 
-    return {"x": next_x, "y": next_y}
-
+    return {"x": next_x}
 
 def make_next_generation(previous_population):
     next_generation = []
@@ -98,7 +91,7 @@ def make_next_generation(previous_population):
 generations = 100
 
 population = generate_population(
-    size=10, x_boundaries=(-4, 4), y_boundaries=(-4, 4))
+    size=50, x_boundaries=(0, 1))
 
 i = 1
 while True:
