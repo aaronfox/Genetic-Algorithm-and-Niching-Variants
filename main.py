@@ -77,13 +77,16 @@ def mutate(individual):
 
 def make_next_generation(previous_population):
     next_generation = []
-    sorted_by_fitness_population = sort_population_by_fitness(previous_population)
+    sorted_by_fitness_population = sort_population_by_fitness(
+        previous_population)
     population_size = len(previous_population)
     fitness_sum = sum(apply_function(individual) for individual in population)
 
     for i in range(population_size):
-        first_choice = choice_by_roulette(sorted_by_fitness_population, fitness_sum)
-        second_choice = choice_by_roulette(sorted_by_fitness_population, fitness_sum)
+        first_choice = choice_by_roulette(
+            sorted_by_fitness_population, fitness_sum)
+        second_choice = choice_by_roulette(
+            sorted_by_fitness_population, fitness_sum)
 
         individual = crossover(first_choice, second_choice)
         individual = mutate(individual)
@@ -94,11 +97,12 @@ def make_next_generation(previous_population):
 
 generations = 100
 
-population = generate_population(size=10, x_boundaries=(-4, 4), y_boundaries=(-4, 4))
+population = generate_population(
+    size=10, x_boundaries=(-4, 4), y_boundaries=(-4, 4))
 
 i = 1
 while True:
-    print(f"🧬 GENERATION {i}")
+    print(f" GENERATION {i}")
 
     for individual in population:
         print(individual, apply_function(individual))
@@ -111,5 +115,5 @@ while True:
     population = make_next_generation(population)
 
 best_individual = sort_population_by_fitness(population)[-1]
-print("\n🔬 FINAL RESULT")
+print("\n FINAL RESULT")
 print(best_individual, apply_function(best_individual))
