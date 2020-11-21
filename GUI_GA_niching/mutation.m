@@ -8,7 +8,6 @@ function [child]=mutation(parent, a, b, fun, option, stringlength, pm)
 %%% pm is the probability of mutation
 
 if option==1 || option==4
-    
     if (rand<pm)
         mpoint=round(rand*(stringlength-1))+1;
         child=parent;

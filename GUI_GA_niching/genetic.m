@@ -109,7 +109,7 @@ else
     ylabel('M(x)');
     plot3(pop(:,2*stringlength+2),pop(:,2*stringlength+1),pop(:,2*stringlength+3),'g*');
     title('Function and Population (initial,niched) plot')
-    hleg1=legend('Function','Initial Optimum','Niche Points','Location','SoutheastOutside',4);
+    hleg1=legend('Function','Initial Optimum','Niche Points','Location','SoutheastOutside');
     
 end
 
@@ -118,7 +118,7 @@ plot(Fmax), hold on, plot(Faver,'r-'), hold on, plot(Fmin,'g');
 xlabel('Generation')
 ylabel('Fitness')
 title('Fitness Progress')
-legend('Maximum Fitness','Mean Fitness','Minimum Fitness',4)
+legend('Maximum Fitness','Mean Fitness','Minimum Fitness')%,4)
 
 % if crowd==1 
 %     name1=strcat('crowding','pc','pm','b');
